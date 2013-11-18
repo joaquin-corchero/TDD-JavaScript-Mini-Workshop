@@ -1,0 +1,12 @@
+describe('Adding new properties', function () {
+  it('should add new property, value is an object', function () {
+    var samurai = {
+      name: "Myamoto"
+    };
+    samurai.address = {
+      street: "Elm Street",
+      postcode: "XX1Y22"
+    };
+    expect(samurai.address.postcode).toBe("XX1Y22");
+  });
+});

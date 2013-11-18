@@ -1,0 +1,14 @@
+describe('Enumerating properties', function () {
+  it('should use for in to enumerate properties of an object', function () {
+    var samurai = {
+      name: 'Myamoto',
+      age: 32
+    }, propertyName, result = '',
+    optionA = 'name=Myamoto;age=32;',
+    optionB = 'age=32;name=Myamoto;';
+    for (propertyName in samurai) {
+      result += propertyName + '=' + samurai[propertyName] + ';';
+    }
+    expect(result === optionA || result === optionB).toBe(true);
+  });
+});

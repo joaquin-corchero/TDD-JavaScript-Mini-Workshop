@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>TDD in JavaScript - mini workshop</title>
+		<meta name="author" content="Damjan Vujnovic">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<style>
+			div.centered {
+				text-align: center;
+			}
+			div.centered table {
+				margin: 0 auto;
+				text-align: left;
+			}
+			td {
+				background-color: #E0C020;
+				width: 32px;
+				height: 32px;
+			}
+			td.alive {
+				background-color: #4040C0;
+			}
+		</style>
+		<link rel="stylesheet" href="lib/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="lib/reveal.js.custom/reveal.css">
+		<link rel="stylesheet" href="lib/reveal.js/css/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="lib/reveal.js/lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/reveal.js/css/print/pdf.css" type="text/css" media="print">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown="1-jasmine.md" data-separator="^\n\n"></section>
+				<section>
+					<h2>Onto the problem</h2>
+					<p>(this is what we're after)</p>
+					<div id='gameOfLifeWidget' class='centered'>
+						<table class='grid'>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+						</table>
+						<input type='button' class='tick' value='tick'></input>
+					</div>
+				</section>
+				<section data-markdown="2-game-of-life.md" data-separator="^\n\n"></section>
+			</div>
+		</div>
+		<script src="lib/reveal.js/lib/js/head.min.js"></script>
+		<script src="lib/reveal.js/js/reveal.min.js"></script>
+		<script src="../koans/lib/jquery-1.10.2.js"></script>
+		<script src="../koans/lib/jquery-ui-1.10.3.custom.js"></script>
+		<script src="../koans/lib/underscore-1.5.2.js"></script>
+		<script src="../koans/lib/backbone-1.1.0.js"></script>
+		<script src="../koans/game-of-life/dont-peek/game-of-life.js"></script>
+		<script>
+			Reveal.initialize({
+				margin: 0,
+				controls: false,
+				progress: true,
+				history: true,
+				center: false,
+				dependencies: [
+					{ src: 'lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'lib/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'lib/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'lib/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+			jQuery(function () {
+				var gameOfLife = new SAMURAIPRINCIPLE.GameOfLife(),
+				gameOfLifeWidget = new SAMURAIPRINCIPLE.GameOfLifeWidget(gameOfLife, jQuery('#gameOfLifeWidget'), 10, 10, 500);
+			});
+		</script>
+	</body>
+</html>

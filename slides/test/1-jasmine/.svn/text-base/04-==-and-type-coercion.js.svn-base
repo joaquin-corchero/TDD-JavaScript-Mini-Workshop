@@ -1,0 +1,16 @@
+describe('Operator == and type coercion', function () {
+  it('Operator == behaves oddly because of type coercion', function () {
+    expect(NaN == NaN).toBe(false);//not reflexive! hmmm...
+    expect(Infinity == Infinity).toBe(true);
+    expect('     ' == 0).toBe(true);
+    expect('  \t \r \n' == 0).toBe(true);
+    expect('' == 0).toBe(true);
+    expect(0 == '0').toBe(true);
+    expect('' == '0').toBe(false);//not transitive! hmmm...
+    expect(false == '0').toBe(true);
+    expect(null == undefined).toBe(true);
+    expect(false == 'false').toBe(false);
+    expect(false == null).toBe(false);
+    expect(false == undefined).toBe(false);
+  });
+});

@@ -1,0 +1,10 @@
+describe('Delete operator', function () {
+  it('should remove property from the object', function () {
+    var samurai = {
+      name: 'Myamoto'
+    };
+    expect(samurai.name).toBe('Myamoto');
+    expect(true).toBe(delete samurai.name);
+    expect(samurai.name).toBe(undefined);
+  });
+});

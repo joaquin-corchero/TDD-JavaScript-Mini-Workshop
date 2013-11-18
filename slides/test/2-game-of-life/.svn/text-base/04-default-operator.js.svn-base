@@ -1,0 +1,5 @@
+if (person.address === undefined) {
+  address = "N/A";
+} else {
+  address = person.address;
+}

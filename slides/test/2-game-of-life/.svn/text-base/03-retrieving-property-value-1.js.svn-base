@@ -1,0 +1,15 @@
+describe('Retrieving object property values using [] and .', function () {
+  it('should return property value', function () {
+    var samurai = {
+      name: 'Yamamoto',
+      age: 12,
+      address: {
+        street: 'Ninja Way',
+        postcode: 'PG 333'
+      }
+    };
+    expect(samurai.name).toBe('Yamamoto');
+    expect(samurai['name']).toBe('Yamamoto');
+    expect(samurai.address.street).toBe('Ninja Way');
+  });
+});

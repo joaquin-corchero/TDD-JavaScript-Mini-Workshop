@@ -1,0 +1,14 @@
+describe('Objects literals', function () {
+  it('should create new object using object literals', function () {
+    var samurai = {
+      name: 'Myamoto',
+      age: 32,
+      address: {
+        street: 'Ninja Way',
+        postcode: 'PG 18+'
+      },
+      'funny-property name': 12345
+    };
+    expect(typeof(samurai)).toBe('object');
+  });
+});

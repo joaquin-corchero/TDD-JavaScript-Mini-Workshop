@@ -1,0 +1,9 @@
+describe('Updating property value', function () {
+  it('should update existing property value', function () {
+    var samurai = {
+      name: 'Myamoto'
+    };
+    samurai.name = 'Hattori';
+    expect(samurai.name).toBe('Hattori');
+  });
+});

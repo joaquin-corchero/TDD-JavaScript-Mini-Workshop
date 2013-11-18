@@ -1,0 +1,27 @@
+describe('Truthy and falsy values and expectations', function () {
+  it('should use toBeTruthy/Falsy to check if something is truthy', function () {
+    var result = '';
+    if (1)
+      result += 'number 1 ';
+    expect(1).toBeTruthy();
+    if (0)
+      result += 'number 0';
+    expect(0).toBeFalsy();
+    if (NaN)
+      result += 'not a number';
+    expect(NaN).toBeFalsy();
+    if ('false')
+      result += 'false ';
+    expect('false').toBeTruthy();
+    if ('')
+      result += 'empty string';
+    expect('').toBeFalsy();
+    if (null)
+      result += 'null ';
+    expect(null).toBeFalsy();
+    if (undefined)
+      result += 'undefined ';
+    expect(undefined).toBeFalsy();
+    expect(result).toBe('number 1 false ')
+  });
+});

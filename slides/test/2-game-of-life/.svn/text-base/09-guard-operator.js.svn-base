@@ -1,0 +1,22 @@
+describe('Guard operator &&', function () {
+  it('should guard you against null and undefined', function () {
+    var s0, p1 = {
+      name: 'Yamamoto'
+    }, p2 = {
+      name: 'Hattori',
+      address: {
+        street: 'Samurai Way'
+      }
+    }, p3 = {
+      name: 'Samyaki',
+      address: {
+        street: 'Ninja Avenue',
+        postcode: 'XX1Y22'
+      }
+    };
+    expect(s0 && s0.address && s0.address.postcode).toBe(undefined);
+    expect(s1 && s1.address && s1.address.postcode).toBe(undefined);
+    expect(s2 && s2.address && s2.address.postcode).toBe(undefined);
+    expect(s3 && s3.address && s3.address.postcode).toBe('XX1Y22');
+  });
+});

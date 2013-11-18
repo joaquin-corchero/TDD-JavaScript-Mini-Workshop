@@ -1,0 +1,12 @@
+describe('Default operator ||', function () {
+  it('should return default if left operand is null or undefined', function () {
+    var samurai1 = {
+      name: 'Myamoto',
+      mobilePhoneNumber: '555-1234'
+    }, samurai2 = {
+      name: 'Hattori'
+    };
+    expect(samurai1.mobilePhoneNumber || 'N/A').toBe('555-1234');
+    expect(samurai2.mobilePhoneNumber || 'N/A').toBe('N/A');
+  });
+});

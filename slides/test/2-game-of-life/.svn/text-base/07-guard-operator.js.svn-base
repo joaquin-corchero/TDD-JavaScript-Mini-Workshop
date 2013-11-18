@@ -1,0 +1,3 @@
+if (person !== undefined && person.address !== undefined) {
+  postcode = person.address.postcode;
+}

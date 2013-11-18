@@ -1,0 +1,11 @@
+describe('Adding new properties', function () {
+  it('should add new properties', function () {
+    var samurai = {
+      name: 'Myamoto'
+    };
+    samurai.age = 20;
+    samurai['is-male'] = true;
+    expect(samurai.age).toBe(20);
+    expect(samurai['is-male']).toBe(true);
+  });
+});

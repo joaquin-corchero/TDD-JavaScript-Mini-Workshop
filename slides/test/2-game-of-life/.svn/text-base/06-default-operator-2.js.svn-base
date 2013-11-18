@@ -1,0 +1,8 @@
+describe('Default operator ||', function () {
+  it('be careful with other falsy values (0, empty string, ...)', function () {
+    var account = {
+      balance: 0
+    };
+    expect(account.balance || 'N/A').toBe('N/A');
+  });
+});

@@ -1,0 +1,12 @@
+describe('Retrieving object property values using [] and .', function () {
+  it('should use [] when properties are not legal names', function () {
+    var samurai = {
+      '1stName': 'Myamoto',
+      'second name': 'Musashi',
+      'home-telephone': '555-12345'
+    };
+    expect(samurai['1stName']).toBe('Myamoto');
+    expect(samurai['second name']).toBe('Musashi');
+    expect(samurai['home-telephone']).toBe('555-12345');
+  });
+});

@@ -1,0 +1,14 @@
+/*global test, strictEqual*/
+test("Mutable and immutable objects", function () {
+  expect(4);
+  [{}, 123.45, false, "Hello World"].forEach(
+    function (currentObject, i) {
+      currentObject.propertyName = "propertyValue";
+      strictEqual(
+        currentObject.propertyName,
+        i ? undefined: "propertyValue",
+        typeof(currentObject) + " is " + (i ? "im" : "") + "mutable"
+      );
+    }
+  );
+});
