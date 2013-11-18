@@ -1,5 +1,7 @@
-Advanced JavaScript Workshop
+TDD in JavaScript
 ===
+(mini-workshop)
+---
 
 
 Who am I?
@@ -35,10 +37,3 @@ More matchers
 
 ````javascript
 <!--#include virtual="test/1-jasmine/02-matchers.js" -->````
-
-
-Asynchronous Specs
----
-
-````javascript
-<!--#include virtual="test/1-jasmine/05-async-specs.js" -->````
