@@ -1,8 +1,7 @@
 function isCellAliveInNextGeneration(isCellAlive, numberOfNeighbours) {
+    var result = true;
     if (numberOfNeighbours > 3)
-        return false;
+        result = false;
 
-    return true;
-	'use strict';
-	throw 'Not implemented!';
+    return result;
 }
