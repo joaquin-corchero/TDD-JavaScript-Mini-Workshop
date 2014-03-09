@@ -13,9 +13,9 @@ describe('Game of Life Widget', function () {
 		expect(gameOfLife.toggleCellState).toHaveBeenCalledWith(3, 4, jasmine.any(Object));
 	});
 	it('3- should add class alive when cell becomes alive', function () {
-		gameOfLife.trigger('cellStateChanged', 3, 4);
+	    gameOfLife.trigger('cellStateChanged', 3, 4);
 
-		expect(widget.find('.grid tr:nth-child(4) td:nth-child(5)').hasClass('alive')).toBe(true);
+        expect(widget.find('.grid tr:nth-child(4) td:nth-child(5)').hasClass('alive')).toBe(true);
 	});
 	it('5 - should remove class alive when cell dies', function () {
 		gameOfLife.trigger('cellStateChanged', 3, 4);

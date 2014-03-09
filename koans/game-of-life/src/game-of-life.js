@@ -4,11 +4,12 @@ SAMURAIPRINCIPLE.GameOfLife = function () {
     'use strict';
     var self = this;
     _.extend(this, Backbone.Events);
+
     this.toggleCellState = function (row, column) {
         self.trigger('cellStateChange', row, column, true);
     };
-    this.tick = function () {
 
+    this.tick = function () {
     };
 };
 
@@ -27,13 +28,17 @@ SAMURAIPRINCIPLE.GameOfLifeWidget = function (gameOfLife, element, rows, columns
     });
 
     gameOfLife.on('cellStateChanged', function (row, column) {
-        if (!duration)
-            duration = 0;
-        setTimeout(function () {
+        if (!duration) {
             element.find('tr:nth-child(' + (row + 1) + ') td:nth-child(' + (column + 1) + ')')
-            .toggleClass('alive').animate(duration);
+              .toggleClass('alive');
+            return;
         }
-        ,
+
+        setTimeout(
+            function () {
+                element.find('tr:nth-child(' + (row + 1) + ') td:nth-child(' + (column + 1) + ')')
+                .toggleClass('alive');
+            },
         duration);
     });
 };
